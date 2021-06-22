@@ -1,0 +1,143 @@
+print("                                                 SNAKE AND LADDER")
+
+p1=input("enter player 1 name:")
+p2=input("enter player 2 name:")
+y= "******CONGRATULATIONS*******\n    ****PLAYER 1 WON****"
+z= "******CONGRATULATIONS*******\n    ****PLAYER 2 WON****"
+
+import time
+import random
+p = 0
+q = 0
+a = 0
+
+def bonus1():
+    global p
+    if p == 4:
+        p = p+10
+        print (f"Yeah, you got ladder:  {p}")
+    elif p == 9:
+        p = p + 22
+        print(f"Yeah, you got ladder:  {p}")
+    elif p == 21:
+        p = p + 21
+        print(f"Yeah, you got ladder:  {p}")
+    elif p == 28:
+        p = p + 56
+        print(f"Yeah, you got ladder:  {p}")
+    elif p == 51:
+        p = p + 16
+        print(f"Yeah, you got ladder:  {p}")
+    elif p == 80:
+        p = p+19
+        print(f"Yeah, you got ladder:  {p}")
+    elif p == 72:
+        p = p + 19
+        print(f"Yeah, you got ladder:  {p}")
+    elif p == 17:
+        p = p - 10
+        print(f"Sorry, you got bitten by snake:  {p}")
+    elif p == 62:
+        p = p - 43
+        print(f"Sorry, you got bitten by snake:  {p}")
+    elif p == 64:
+        p = p-4
+        print(f"Sorry, you got bitten by snake:  {p}")
+    elif p == 95:
+        p = p - 25
+        print(f"Sorry, you got bitten by snake:  {p}")
+    elif p == 87:
+        p = p - 51
+        print(f"Sorry, you got bitten by snake:  {p}")
+    elif p == 92:
+        p = p - 19
+        print(f"Sorry, you got bitten by snake:  {p}")
+    elif p == 98:
+        p = p - 19
+        print(f"Sorry, you got bitten by snake:  {p}")
+    elif p > 100:
+        p = p - 10
+        print(f"10 pts deducted for exceding 100:  {p}")
+    elif p == 100:
+        print(y)
+        breakpoint("Thank you for playing our game")
+
+
+def bonus2():
+    global q
+    if q == 4:
+        q = q + 10
+        print(f"        Yeah, you got ladder:  {q}")
+    elif q == 9:
+        q = q + 22
+        print(f"        Yeah, you got ladder:  {q}")
+    elif q == 21:
+        q = q + 21
+        print(f"        Yeah, you got ladder:  {q}")
+    elif q == 28:
+        q = q + 56
+        print(f"        Yeah, you got ladder:  {q}")
+    elif q == 51:
+        q = q + 16
+        print(f"        Yeah, you got ladder:  {q}")
+    elif q == 80:
+        q = q + 19
+        print(f"        Yeah, you got ladder:  {q}")
+    elif q == 72:
+        q = q + 19
+        print(f"        Yeah, you got ladder:  {q}")
+    elif q == 17:
+        q = q - 10
+        print(f"        Sorry, you got bitten by snake:  {q}")
+    elif q == 62:
+        q = q - 43
+        print(f"        Sorry, you got bitten by snake:  {q}")
+    elif q == 64:
+        q = q - 4
+        print(f"        Sorry, you got bitten by snake:  {q}")
+    elif q == 95:
+        q = q - 25
+        print(f"        Sorry, you got bitten by snake:  {q}")
+    elif q == 87:
+        q = q - 51
+        print(f"        Sorry, you got bitten by snake:  {q}")
+    elif q == 92:
+        q = q - 19
+        print(f"        Sorry, you got bitten by snake:  {q}")
+    elif q == 98:
+        q = q - 19
+        print(f"        Sorry, you got bitten by snake:  {q}")
+    elif q > 100:
+        q = q - 10
+        print(f"        10 pts deducted for exceding 100:  {q}")
+    elif q == 100:
+        print(z)
+        breakpoint()
+
+
+def player_1():
+    r = random.randint(1, 6)
+    print("Dice rolling....")
+    time.sleep(2)
+    global p
+    p = p+r
+    print(f"{p1}:  {p}        Dice:{r}")
+    bonus1()
+
+def player_2():
+    r = random.randint(1, 6)
+    print("             Dice rolling....")
+    time.sleep(2)
+    global q
+    q = q + r
+    print(f"            {p2}:  {q}        Dice:{r}")
+    bonus2()
+
+while a <= 100:
+    a = a+1
+    if a % 2 != 0:
+        player_1()
+        input("press any key\n")
+    else:
+        player_2()
+        input("            press any key\n")
